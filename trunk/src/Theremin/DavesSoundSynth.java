@@ -1,6 +1,19 @@
 package Theremin;
 
+/*//////////////////////////////////////////////////////*
 
+Chris.
+Install Jsyn the way the website tells you to (Link Source and External Archives).
+
+You should be able to run this Theremin and play with it. 
+I haven't figured out how to set the default size of the JApplet,
+but you can resize it to play with the sound, and check that it works.
+
+Anyways, I'm off to bed for the night.
+
+Have a good one.
+
+///////////////////////////////////////////////////////////////*/
 
 //import MainFrame;
 //import MainPanel;
