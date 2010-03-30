@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="jsynsdk"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/workspace/jsyn_sdk_V144_071226/classes/SoftSynthTools.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/jsyn_sdk_V144_071226/classes/jsyn.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Blueflame/Desktop/Downloads/bluecove-2.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Blueflame/Desktop/Downloads/bluecove-emu-2.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Blueflame/Desktop/Downloads/apache-log4j-1.2.15/apache-log4j-1.2.15/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Blueflame/Desktop/Downloads/commons-logging-1.1.1/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Blueflame/Desktop/Downloads/apache-log4j-1.2.15/apache-log4j-1.2.15/build.xml"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Blueflame/Desktop/log4j.properties"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Blueflame/Desktop/Downloads/JXInput_0.3.4/JXInput_0.3.4/jxinput.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Blueflame/Desktop/Downloads/stuff/amfphp-1.9.beta.20080120.zip"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
