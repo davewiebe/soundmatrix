@@ -58,7 +58,7 @@ import com.softsynth.jsyn.view11x.DecibelPortFader;*/
 import com.softsynth.jsyn.view11x.PortFader;
 
 
-public class DavesSoundSynth extends JFrame implements ItemListener, KeyListener, MouseMotionListener
+public class DavesSoundSynth extends JApplet implements ItemListener, KeyListener, MouseMotionListener
 {
 	ThereminOsc 			thereminOsc;
 	LineOut               	lineOut;
@@ -95,7 +95,7 @@ public class DavesSoundSynth extends JFrame implements ItemListener, KeyListener
 	}
 	
 	public static void main(String[] args){
-		DavesSoundSynth mainFrame = new DavesSoundSynth();
+		JApplet mainFrame = new DavesSoundSynth();
 		mainFrame.setSize(new Dimension(700, 700));
 	}
 
