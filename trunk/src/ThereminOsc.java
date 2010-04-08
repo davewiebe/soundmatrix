@@ -5,7 +5,6 @@ import com.softsynth.jsyn.SynthException;
 import com.softsynth.jsyn.SynthInput;
 import com.softsynth.jsyn.SynthOutput;
 
-
 public class ThereminOsc extends SynthCircuit{
 	/* Declare units that will be part of the circuit. */
 	SineOscillator  primaryFreq;

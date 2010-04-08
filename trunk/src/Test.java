@@ -50,6 +50,8 @@ public class Test extends Applet
    */
 	public void stop()  
 	{
+		mySound.delete();
+		removeAll();
 		Synth.stopEngine();
     }
 	
