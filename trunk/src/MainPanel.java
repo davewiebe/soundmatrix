@@ -78,8 +78,8 @@ MainPanel(){
 	}
 	public void AddNode(int a, int b, int c){
 		if(nodeInd < NODE_LIM){
-	noteList[nodeInd].Set(a, b, c);
-	nodeInd++;
+			noteList[nodeInd].Set(a, b, c);
+			nodeInd++;
 		}
 	}
 	public void GrowNode() {
@@ -95,6 +95,7 @@ MainPanel(){
 		boolean flag = true;
 		for(int i = 0; i < NODE_LIM; i++){
 			 noteList[i].RunSignal();
+			 
 			 if(noteList[i].boolSig)
 				 flag = false;
 			 for(int j = 0; j < NODE_LIM; j++){

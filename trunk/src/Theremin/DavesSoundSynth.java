@@ -1,23 +1,5 @@
 package Theremin;
 
-/*//////////////////////////////////////////////////////*
-
-Chris.
-Install Jsyn the way the website tells you to (Link Source and External Archives).
-
-You should be able to run this Theremin and play with it. 
-I haven't figured out how to set the default size of the JApplet,
-but you can resize it to play with the sound, and check that it works.
-
-Anyways, I'm off to bed for the night.
-
-Have a good one.
-
-///////////////////////////////////////////////////////////////*/
-
-//import MainFrame;
-//import MainPanel;
-
 import java.awt.event.MouseMotionListener;
 //import java.awt.event.WindowAdapter;
 //import java.awt.event.WindowEvent;
@@ -58,7 +40,7 @@ import com.softsynth.jsyn.view11x.DecibelPortFader;*/
 import com.softsynth.jsyn.view11x.PortFader;
 
 
-public class DavesSoundSynth extends JApplet implements ItemListener, KeyListener, MouseMotionListener
+public class DavesSoundSynth extends JApplet implements KeyListener, MouseMotionListener
 {
 	ThereminOsc 			thereminOsc;
 	LineOut               	lineOut;
@@ -77,7 +59,7 @@ public class DavesSoundSynth extends JApplet implements ItemListener, KeyListene
 	double		 			Bandwidth_Value = 0.2;
 	double					Freq_Value = 400.0;
 	
-	LongEcho           		myEcho;
+	//LongEcho           		myEcho;
 
 	private final int 		POLLING_RATE = 20;
 	private final double 	MAX_FREQUENCY = 800;
@@ -155,7 +137,7 @@ public class DavesSoundSynth extends JApplet implements ItemListener, KeyListene
 		Synth.setTrace(Synth.SILENT);
 
 		filter = new Filter_1o1p1z();
-		myEcho = new LongEcho( 0.01 );
+		//myEcho = new LongEcho( 0.01 );
 		thereminOsc = new ThereminOsc();
 		lineOut = new LineOut();
 		mixer = new AddUnit();
@@ -165,14 +147,14 @@ public class DavesSoundSynth extends JApplet implements ItemListener, KeyListene
 
 		mixer.output.connect(filter.input);
 		
-		mixer2.output.connect(myEcho.input);
-		filter.output.connect(mixer2.inputA);
-		myEcho.output.connect(mixer2.inputB);
+	//	mixer2.output.connect(myEcho.input);
+	//	filter.output.connect(mixer2.inputA);
+	//	myEcho.output.connect(mixer2.inputB);
 		
-		mixer2.output.connect( 0, lineOut.input, 0 );   // connect to left channel
-		mixer2.output.connect( 0, lineOut.input, 1 );   // connect to right channel
+		filter.output.connect( 0, lineOut.input, 0 );   // connect to left channel
+		filter.output.connect( 0, lineOut.input, 1 );   // connect to right channel
 		
-		myEcho.amplitude.set(0.3);
+	//	myEcho.amplitude.set(0.3);
 		
 		thereminOsc.frequency.set(400);
 		thereminOsc.amplitude.set(0.6);
@@ -216,7 +198,7 @@ public class DavesSoundSynth extends JApplet implements ItemListener, KeyListene
         filter.A1.set(0);
         filter.B1.set(0);
         
-        myEcho.start();
+       // myEcho.start();
 		lineOut.start();
 		mixer.start();
 		mixer2.start();
@@ -321,14 +303,6 @@ public class DavesSoundSynth extends JApplet implements ItemListener, KeyListene
 			
 			adder3.output.connect(primaryFreq.frequency);
 
-			//firstHarmonic.frequency.set(primaryFreq.frequency.get()*2);
-			//secondHarmonic.frequency.set(primaryFreq.frequency.get()*4);
-			
-			//firstHarmonic.amplitude.set(primaryFreq.amplitude.get()*0.2);
-			//secondHarmonic.amplitude.set(primaryFreq.amplitude.get()*0.06);
-			
-			///////
-
 			firstHarmonic.frequency.set(primaryFreq.frequency.get()*0.5);
 			secondHarmonic.frequency.set(primaryFreq.frequency.get()*2);
 			
@@ -366,7 +340,7 @@ public class DavesSoundSynth extends JApplet implements ItemListener, KeyListene
 		}
 
 	}
-
+/*
 	class LongEcho extends SynthCircuit
 	{
 		SynthSample       delayLine;
@@ -384,7 +358,7 @@ public class DavesSoundSynth extends JApplet implements ItemListener, KeyListene
 		{
 			super();
 
-	/* Calculate how many sample correspond to a given delay time. */
+	/* Calculate how many sample correspond to a given delay time. 
 			numSamples = (int) (delayTime * Synth.getFrameRate());
 
 			delayLine = new SynthSample( numSamples );
@@ -424,12 +398,11 @@ public class DavesSoundSynth extends JApplet implements ItemListener, KeyListene
    		}
 	}
 
-
 	@Override
 	public void itemStateChanged(ItemEvent e) {
 		Object source = e.getSource();
 
 		if( source == wiiChecker ) handleChecker();
 	}
-	
+*/	
 }
