@@ -1,9 +1,4 @@
-
-import java.util.Timer;
-import java.awt.Checkbox;
-
 import com.softsynth.jsyn.*;
-
 
 public class Sound
 {
@@ -74,5 +69,16 @@ public class Sound
 		envData.write( 0, data, 0, i/2 );
     	envPlayer.envelopePort.clear();
     	envPlayer.envelopePort.queue( envData, 0, i/2 );
+    }
+    void delete(){
+		thereminOsc.delete();
+		lineOut.delete();
+		envPlayer.delete();
+		
+		thereminOsc	= null;
+		lineOut		= null;
+		envPlayer	= null;
+		
+		Synth.stopEngine();
     }
 }
