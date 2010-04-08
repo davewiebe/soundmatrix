@@ -55,7 +55,7 @@ public void paint(Graphics g){
 			g2D.setColor( new Color(0, (int)(155*((double)sigStrength/(double)SIG_LIM) - 155*((double)sigR/(double)SIG_LIM)), (int)(85*((double)sigStrength/(double)SIG_LIM) - 85*((double)sigR/(double)SIG_LIM))));
 		else
 			g2D.setColor( new Color((int)(5*((double)sigStrength/(double)SIG_LIM) - 5*((double)sigR/(double)SIG_LIM)), (int)(35*((double)sigStrength/(double)SIG_LIM) - 35*((double)sigR/(double)SIG_LIM)), (int)(85*((double)sigStrength/(double)SIG_LIM) - 85*((double)sigR/(double)SIG_LIM))));
-			
+
 		g2D.drawOval(x - sigR/2, y - sigR/2, sigR, sigR);
 		
 	}
@@ -96,7 +96,9 @@ private int min(double i, double j) {
 }
 public void SendSigOut(){
 	if(d>0)
+	{
 		boolSig = true;
+	}
 }
 public void SendSigOut(int s){
 	if(multiSig){
