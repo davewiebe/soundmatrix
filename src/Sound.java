@@ -10,16 +10,18 @@ public class Sound
 	LineOut               	lineOut;
 		
     public Sound() {
-    			
-		envData = new SynthEnvelope( /*numFrames*/ 20 );
 
     	System.out.println("Sound()");
+		
+
 		try
 		{
 			/* Start synthesis engine.  */
 			Synth.startEngine( 0 );
 			Synth.setTrace(Synth.SILENT);
-
+			
+			envData = new SynthEnvelope( /*numFrames*/ 20 );
+			
 			thereminOsc = new ThereminOsc();
 			lineOut 	= new LineOut();
 			envPlayer 	= new EnvelopePlayer();

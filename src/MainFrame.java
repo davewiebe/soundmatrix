@@ -5,7 +5,8 @@ import java.awt.event.*;
 	
 	 
 	 
-
+// water backdrop courtesy of pachd and can be found at: http://www.pachd.com/free-images/abstract-images/water-04.jpg
+//image converted to .java file thanks to ImageToClass; a project undertaken by Stephen Ware: http://stephengware.com/projects/imagetoclass/
 	public class MainFrame extends JApplet implements Runnable, ActionListener 
 	{
 		Thread t;
@@ -14,21 +15,10 @@ import java.awt.event.*;
 			mainPanel = new MainPanel();
 			t = new Thread(this);
 			t.start();
-			JFrame frame = new JFrame("Java Swing Demo");
-			frame.setPreferredSize(new Dimension(600, 600));
-			frame.setVisible(true);
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.setContentPane(mainPanel);
-			frame.pack();
-			frame.setVisible(true);
-		}
-		public static void main(String[] args){
-			MainFrame mainFrame = new MainFrame();
-			
 		}
 		public void init(){
-			
-
+			this.setContentPane(mainPanel);
+			this.setSize(600, 600);
 		}
 		public void paint(Graphics g) {
 		mainPanel.paint(g);
