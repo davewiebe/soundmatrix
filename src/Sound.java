@@ -5,7 +5,7 @@ public class Sound
 	EnvelopePlayer   		envPlayer;
 	SynthEnvelope     		envData;
 	double[] 				data;
-	
+
 	ThereminOsc 			thereminOsc;
 	LineOut               	lineOut;
 		
@@ -19,7 +19,7 @@ public class Sound
 			/* Start synthesis engine.  */
 			Synth.startEngine( 0 );
 			Synth.setTrace(Synth.SILENT);
-	
+
 			thereminOsc = new ThereminOsc();
 			lineOut 	= new LineOut();
 			envPlayer 	= new EnvelopePlayer();
@@ -27,9 +27,9 @@ public class Sound
 	
 			envPlayer.output.connect( 0, thereminOsc.amplitude, 0 );
 			
-			thereminOsc.output.connect( 0, lineOut.input, 0 );
-			thereminOsc.output.connect( 0, lineOut.input, 1 );			
-			
+			thereminOsc.output.connect( 0, lineOut.input, 0 );//  //
+			thereminOsc.output.connect( 0, lineOut.input, 1 );	//		
+						
 			thereminOsc.frequency.set(400);
 			thereminOsc.amplitude.set(0.6);
 	
@@ -70,6 +70,7 @@ public class Sound
     	envPlayer.envelopePort.clear();
     	envPlayer.envelopePort.queue( envData, 0, i/2 );
     }
+    
     void delete(){
 		thereminOsc.delete();
 		lineOut.delete();
