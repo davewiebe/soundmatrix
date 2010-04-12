@@ -16,7 +16,7 @@ public class ThereminOsc extends SynthCircuit{
 	AddUnit     	adder3;
 	SineOscillator  vibrato;
 	
-/* Declare ports. */
+/* Declare ports. */    
 	public SynthInput frequency;
 	public SynthInput amplitude;
 	public SynthInput vibratoRate;

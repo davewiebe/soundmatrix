@@ -70,9 +70,9 @@ public void paint(Graphics g){
 			g2D.setColor( Color.cyan );
 		else
 			g2D.setColor( Color.white );
-		g2D.fillOval(x - d/2, y - d/2, d, d);
 		
-		}
+		g2D.fillOval(x - d/2, y - d/2, d, d);
+	}
 }
 
 private int max(int i, int j) {
@@ -92,7 +92,6 @@ private int min(double i, double j) {
 		return (int)i;
 	else
 		return (int)j;
-	
 }
 public void SendSigOut(){
 	if(d>0)
@@ -102,19 +101,18 @@ public void SendSigOut(){
 }
 public void SendSigOut(int s){
 	if(multiSig){
-	if((boolSig)&&(wRind < 8)){
-		wR[wRind] = 0;
-		wS[wRind] = SIG_LIM - s;
-		wRind++;
-		}
-		else if((d>0)&&!boolSig){
-		boolSig = true;
-		sigStrength -= s;
-	}
-	}
-	else if((d>0)&&!boolSig){
+		if((boolSig)&&(wRind < 8)){
+			wR[wRind] = 0;
+			wS[wRind] = SIG_LIM - s;
+			wRind++;
+		}else if((d>0)&&!boolSig){
 			boolSig = true;
 			sigStrength -= s;
+		}
+	}
+	else if((d>0)&&!boolSig){
+		boolSig = true;
+		sigStrength -= s;
 	}
 		
 }
@@ -128,8 +126,7 @@ public void RunSignal(){
 			}
 			wS[7] = 0;
 			wR[7] = 0;
-			wRind --;
-			
+			wRind --;			
 		}
 	}
 	if(boolSig){
