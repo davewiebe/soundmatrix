@@ -48,16 +48,19 @@ public void Reset(){
 	d = 0;
 }
 public void Play(int ins, int freq, int str){
-	System.out.println("Playing sound." + ins +", "+ freq +", "+ str);
+	System.out.println("Playing sound " + ins +", "+ freq +", "+ str);
 	if(instr1 == null){
 		instr1 = new Sound();
 	}
 	if(instr2 == null){
 		instr2 = new BellOsc();
 	}
+	// 1 30 1200
+	// 1 5  600
+	double frequency = ((freq - 5.0))/30.0;
 	
-	
-	instr2.hit(freq*20, 3, .9);
+	if(ins == 1)		instr1.hit((int)( 700 - frequency*600.0), (double)str/(300), (double)str/(2* 1200.0));
+	else if(ins == 2) 	instr2.hit((int)( 700 - frequency*600.0), (double)str/(300), (double)str/(2* 1200.0));
 }
 public void paint(Graphics g){
 	Graphics2D g2D = (Graphics2D)g;
